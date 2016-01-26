@@ -15,6 +15,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".HoleVizOne"
+            android:label="@string/title_activity_hole_viz_one"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".HoleVizTwo"
+            android:label="@string/title_activity_hole_viz_two"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>

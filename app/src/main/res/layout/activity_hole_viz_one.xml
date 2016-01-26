@@ -7,20 +7,13 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.franmelp.golfgps.HomeScreenActivity">
+    tools:context="com.franmelp.golfgps.HoleVizOne"
+    android:background="@android:color/holo_green_dark">
 
-    <Button
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hole One!"
-        android:id="@+id/buttonOne"
+        android:text="Hole One"
         />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/buttonOne"
-        android:text="Hole Two!"
-        android:id="@+id/buttonTwo"
-        />
 </RelativeLayout>
