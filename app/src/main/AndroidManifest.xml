@@ -2,8 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.franmelp.golfgps">
 
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" >
-    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -25,8 +24,24 @@
         <activity
             android:name=".HoleVizTwo"
             android:label="@string/title_activity_hole_viz_two"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".HoleVizThree" />
+        <activity android:name=".HoleVizFour" />
+        <activity android:name=".HoleVizFive" />
+        <activity android:name=".HoleVizSix" />
+        <activity android:name=".HoleVizSeven" />
+        <activity android:name=".HoleVizEight" />
+        <activity android:name=".HoleVizNine" />
+        <activity android:name=".HoleVizTen" />
+        <activity android:name=".HoleVizEleven" />
+        <activity android:name=".HoleVizTwelve" />
+        <activity android:name=".HoleVizThirteen" />
+        <activity android:name=".HoleVizFourteen" />
+        <activity android:name=".HoleVizFifteen" />
+        <activity android:name=".HoleVizSixteen" />
+        <activity android:name=".HoleVizSeventeen" />
+        <activity android:name=".HoleVizEigtheen" />
+        <activity android:name=".HoleVizEighteen"></activity>
     </application>
 
 </manifest>

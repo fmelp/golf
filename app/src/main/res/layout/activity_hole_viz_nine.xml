@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.franmelp.golfgps.HoleVizOne"
+    tools:context="com.franmelp.golfgps.HoleVizNine"
     android:background="@android:color/holo_green_dark">
 
     <!--android:paddingBottom="@dimen/activity_vertical_margin"-->
@@ -12,7 +12,7 @@
     <!--android:paddingTop="@dimen/activity_vertical_margin"-->
 
     <View
-        android:id="@+id/oneCenterShim"
+        android:id="@+id/nineCenterShim"
         android:layout_height="match_parent"
         android:layout_width="0dp"
         android:visibility="invisible"
@@ -22,41 +22,25 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/hole1_rimpicc"
-        android:id="@+id/oneHolePic"
+        android:src="@drawable/hole9_rimpicc"
+        android:id="@+id/nineHolePic"
         android:layout_alignParentLeft="true"
-        android:layout_toLeftOf="@+id/oneCenterShim"
+        android:layout_toLeftOf="@+id/nineCenterShim"
         />
 
-    <!--<Button-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:id="@+id/oneNextButton"-->
-        <!--android:layout_alignParentLeft="true"-->
-        <!--android:layout_below="@id/oneCenterShim"-->
-        <!--android:text="NEXT->"/>-->
-    <!--<Button-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:id="@+id/onePrevButton"-->
-        <!--android:layout_alignParentLeft="true"-->
-        <!--android:layout_below="@id/oneCenterShim"-->
-        <!--android:layout_toLeftOf="@id/oneNextButton"-->
-        <!--android:text="<-PREVIOUS"/>-->
-
     <LinearLayout
-        android:id="@+id/oneDistances"
+        android:id="@+id/nineDistances"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/oneHolePic"
-        android:layout_toRightOf="@+id/oneCenterShim"
+        android:layout_alignTop="@+id/nineHolePic"
+        android:layout_toRightOf="@+id/nineCenterShim"
         android:layout_alignParentRight="true"
         android:orientation="vertical" >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_toRightOf="@id/oneHolePic"
+            android:layout_toRightOf="@id/nineHolePic"
             android:text="TO GREEN:"
             android:textStyle="bold|italic"
             />
@@ -64,16 +48,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_toRightOf="@id/oneHolePic"
+            android:layout_toRightOf="@id/nineHolePic"
             android:textStyle="bold"
-            android:id="@+id/oneFront"
+            android:id="@+id/nineFront"
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/oneFront"
+            android:layout_below="@id/nineFront"
             android:textStyle="bold"
-            android:id="@+id/oneBack"
+            android:id="@+id/nineBack"
             />
         <TextView
             android:layout_width="wrap_content"
@@ -84,28 +68,39 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/oneBack"
-            android:id="@+id/oneHazOne"
+            android:layout_below="@id/nineBack"
+            android:id="@+id/nineHazOne"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nineHazOne"
+            android:id="@+id/nineHazTwo"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nineHazTwo"
+            android:id="@+id/nineHazThree"
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_toRightOf="@id/oneHolePic"
+            android:layout_toRightOf="@id/nineHolePic"
             android:text="FROM TEE:"
             android:textStyle="bold|italic"
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/oneHazOne"
-            android:id="@+id/oneFromWhite"
+            android:id="@+id/nineFromWhite"
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/oneFromWhite"
-            android:id="@+id/oneFromYellow"
+            android:layout_below="@id/nineFromWhite"
+            android:id="@+id/nineFromYellow"
             />
     </LinearLayout>
 

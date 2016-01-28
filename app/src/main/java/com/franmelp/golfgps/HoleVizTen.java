@@ -10,9 +10,8 @@ import android.view.Window;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class HoleVizTwo extends AppCompatActivity{
+public class HoleVizTen extends AppCompatActivity{
 
-    private ImageView header;
     private TextView hazTwoText;
     private TextView hazThreeText;
     private TextView hazFourText;
@@ -42,63 +41,63 @@ public class HoleVizTwo extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_hole_viz_two);
+        setContentView(R.layout.activity_hole_viz_ten);
 
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
-        fromWhiteText = (TextView) findViewById(R.id.twoFromWhite);
+        fromWhiteText = (TextView) findViewById(R.id.tenFromWhite);
         fromWhiteText.setText("from white: ");
         fromWhiteLoc = new Location("");
-        fromWhiteLoc.setLatitude(40.87094799);
-        fromWhiteLoc.setLongitude(17.39980940);
+        fromWhiteLoc.setLatitude(40.87679788);
+        fromWhiteLoc.setLongitude(17.40069552);
 
-        fromYelText = (TextView) findViewById(R.id.twoFromYellow);
+        fromYelText = (TextView) findViewById(R.id.tenFromYellow);
         fromYelText.setText("from yellow: ");
         fromYelLoc = new Location("");
-        fromYelLoc.setLatitude(40.87115139);
-        fromYelLoc.setLongitude(17.39986065);
+        fromYelLoc.setLatitude(40.87692380);
+        fromYelLoc.setLongitude(17.40074754);
 
-        hazOneText = (TextView) findViewById(R.id.twoHazOne);
+        hazOneText = (TextView) findViewById(R.id.tenHazOne);
         hazOneText.setText("1.");
         hazOneLoc = new Location("");
-        hazOneLoc.setLatitude(40.87202329);
-        hazOneLoc.setLongitude(17.40172070);
+        hazOneLoc.setLatitude(40.87836700);
+        hazOneLoc.setLongitude(17.39986244);
 
-        hazTwoText = (TextView) findViewById(R.id.twoHazTwo);
+        hazTwoText = (TextView) findViewById(R.id.tenHazTwo);
         hazTwoText.setText("2.");
         hazTwoLoc = new Location("");
-        hazTwoLoc.setLatitude(40.87222922);
-        hazTwoLoc.setLongitude(17.40199632);
+        hazTwoLoc.setLatitude(40.87849926);
+        hazTwoLoc.setLongitude(17.39979567);
 
-        hazThreeText = (TextView) findViewById(R.id.twoHazThree);
+        hazThreeText = (TextView) findViewById(R.id.tenHazThree);
         hazThreeText.setText("3.");
         hazThreeLoc = new Location("");
-        hazThreeLoc.setLatitude(40.87250976);
-        hazThreeLoc.setLongitude(17.40180355);
+        hazThreeLoc.setLatitude(40.87849355);
+        hazThreeLoc.setLongitude(17.39918312);
 
-        hazFourText = (TextView) findViewById(R.id.twoHazFour);
+        hazFourText = (TextView) findViewById(R.id.tenHazFour);
         hazFourText.setText("4.");
         hazFourLoc = new Location("");
-        hazFourLoc.setLatitude(40.87292567);
-        hazFourLoc.setLongitude(17.40362936);
+        hazFourLoc.setLatitude(40.87860383);
+        hazFourLoc.setLongitude(17.39914260);
 
-        hazFiveText = (TextView) findViewById(R.id.twoHazFive);
+        hazFiveText = (TextView) findViewById(R.id.tenHazFive);
         hazFiveText.setText("5.");
         hazFiveLoc = new Location("");
-        hazFiveLoc.setLatitude(40.87304034);
-        hazFiveLoc.setLongitude(17.40413426);
+        hazFiveLoc.setLatitude(40.87955482);
+        hazFiveLoc.setLongitude(17.39809086);
 
-        frontGreenText = (TextView) findViewById(R.id.twoFront);
+        frontGreenText = (TextView) findViewById(R.id.tenFront);
         frontGreenText.setText("front:");
         frontGreenLoc = new Location("");
-        frontGreenLoc.setLatitude(40.87302946);
-        frontGreenLoc.setLongitude(17.40487194);
+        frontGreenLoc.setLatitude(40.88012928);
+        frontGreenLoc.setLongitude(17.39775855);
 
-        backGreenText = (TextView) findViewById(R.id.twoBack);
+        backGreenText = (TextView) findViewById(R.id.tenBack);
         backGreenText.setText("back:");
         backGreenLoc = new Location("");
-        backGreenLoc.setLatitude(40.87323026);
-        backGreenLoc.setLongitude(17.40517705);
+        backGreenLoc.setLatitude(40.88036958);
+        backGreenLoc.setLongitude(17.39759444);
 
 
 
@@ -112,13 +111,13 @@ public class HoleVizTwo extends AppCompatActivity{
                 //hazTwo
                 String distHazTwo = "2. " + calcDistance(hazTwoLoc);
                 hazTwoText.setText(distHazTwo);
-                //hazOne
+                //hazThree
                 String distHazThree = "3. " + calcDistance(hazThreeLoc);
                 hazThreeText.setText(distHazThree);
-                //hazOne
+                //hazFour
                 String distHazFour = "4. " + calcDistance(hazFourLoc);
                 hazFourText.setText(distHazFour);
-                //hazOne
+                //hazFive
                 String distHazFive = "5. " + calcDistance(hazFiveLoc);
                 hazFiveText.setText(distHazFive);
                 //frontGreen
@@ -178,7 +177,6 @@ public class HoleVizTwo extends AppCompatActivity{
     private String calcDistance(Location location){
         int distanceMeters = java.lang.Math.round(currentLocation.distanceTo(location));
         return Integer.toString(distanceMeters);
-
     }
 
 }

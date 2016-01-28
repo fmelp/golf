@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.franmelp.golfgps.HoleVizOne"
+    tools:context="com.franmelp.golfgps.HoleVizSeven"
     android:background="@android:color/holo_green_dark">
 
     <!--android:paddingBottom="@dimen/activity_vertical_margin"-->
@@ -12,7 +12,7 @@
     <!--android:paddingTop="@dimen/activity_vertical_margin"-->
 
     <View
-        android:id="@+id/oneCenterShim"
+        android:id="@+id/sevenCenterShim"
         android:layout_height="match_parent"
         android:layout_width="0dp"
         android:visibility="invisible"
@@ -22,41 +22,25 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/hole1_rimpicc"
-        android:id="@+id/oneHolePic"
+        android:src="@drawable/hole7_rimpicc"
+        android:id="@+id/sevenHolePic"
         android:layout_alignParentLeft="true"
-        android:layout_toLeftOf="@+id/oneCenterShim"
+        android:layout_toLeftOf="@+id/sevenCenterShim"
         />
 
-    <!--<Button-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:id="@+id/oneNextButton"-->
-        <!--android:layout_alignParentLeft="true"-->
-        <!--android:layout_below="@id/oneCenterShim"-->
-        <!--android:text="NEXT->"/>-->
-    <!--<Button-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:id="@+id/onePrevButton"-->
-        <!--android:layout_alignParentLeft="true"-->
-        <!--android:layout_below="@id/oneCenterShim"-->
-        <!--android:layout_toLeftOf="@id/oneNextButton"-->
-        <!--android:text="<-PREVIOUS"/>-->
-
     <LinearLayout
-        android:id="@+id/oneDistances"
+        android:id="@+id/sevenDistances"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/oneHolePic"
-        android:layout_toRightOf="@+id/oneCenterShim"
+        android:layout_alignTop="@+id/sevenHolePic"
+        android:layout_toRightOf="@+id/sevenCenterShim"
         android:layout_alignParentRight="true"
         android:orientation="vertical" >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_toRightOf="@id/oneHolePic"
+            android:layout_toRightOf="@id/sevenHolePic"
             android:text="TO GREEN:"
             android:textStyle="bold|italic"
             />
@@ -64,16 +48,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_toRightOf="@id/oneHolePic"
+            android:layout_toRightOf="@id/sevenHolePic"
             android:textStyle="bold"
-            android:id="@+id/oneFront"
+            android:id="@+id/sevenFront"
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/oneFront"
+            android:layout_below="@id/sevenFront"
             android:textStyle="bold"
-            android:id="@+id/oneBack"
+            android:id="@+id/sevenBack"
             />
         <TextView
             android:layout_width="wrap_content"
@@ -84,28 +68,45 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/oneBack"
-            android:id="@+id/oneHazOne"
+            android:layout_below="@id/sevenBack"
+            android:id="@+id/sevenHazOne"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sevenHazOne"
+            android:id="@+id/sevenHazTwo"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sevenHazTwo"
+            android:id="@+id/sevenHazThree"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/sevenHazThree"
+            android:id="@+id/sevenHazFour"
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_toRightOf="@id/oneHolePic"
+            android:layout_toRightOf="@id/sevenHolePic"
             android:text="FROM TEE:"
             android:textStyle="bold|italic"
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/oneHazOne"
-            android:id="@+id/oneFromWhite"
+            android:id="@+id/sevenFromWhite"
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/oneFromWhite"
-            android:id="@+id/oneFromYellow"
+            android:layout_below="@id/sevenFromWhite"
+            android:id="@+id/sevenFromYellow"
             />
     </LinearLayout>
 
