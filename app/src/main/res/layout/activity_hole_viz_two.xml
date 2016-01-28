@@ -10,25 +10,38 @@
     tools:context="com.franmelp.golfgps.HoleVizTwo"
     android:background="@android:color/holo_green_dark">
 
-    <!--<TextView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Hole Two"-->
-        <!--android:layout_below="@+id/headerTwo"-->
-        <!--/>-->
-
-    <ImageView
-        android:layout_width="match_parent"
+    <TextView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/hole_2_header"
-        android:id="@+id/headerTwo"
+        android:layout_alignParentTop="true"
+        android:id="@+id/hazOne"
         />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/hazOne"
+        android:id="@+id/frontTwo"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/frontTwo"
+        android:id="@+id/backTwo"
+        />
+
+
+    <!--<ImageView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:src="@drawable/hole_2_header"-->
+        <!--android:id="@+id/headerTwo"-->
+        <!--/>-->
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/hole_2_hole"
         android:id="@+id/holeTwoHole"
-        android:layout_below="@id/headerTwo"
+        android:layout_below="@id/backTwo"
         android:layout_alignParentLeft="true"
         />
 
