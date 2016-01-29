@@ -17,6 +17,13 @@
         android:layout_width="0dp"
         android:visibility="invisible"
         android:layout_centerHorizontal="true"/>
+    <!--<ImageView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:src="@drawable/hole1_header"-->
+        <!--android:id="@+id/oneHeader"-->
+        <!--android:layout_toRightOf="@+id/oneCenterShim"-->
+        <!--/>-->
 
 
     <ImageView
@@ -107,6 +114,27 @@
             android:layout_below="@id/oneFromWhite"
             android:id="@+id/oneFromYellow"
             />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PREV"
+                android:id="@+id/onePrev"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NEXT"
+                android:id="@+id/oneNext"
+                />
+
+
+        </LinearLayout>
     </LinearLayout>
 
 

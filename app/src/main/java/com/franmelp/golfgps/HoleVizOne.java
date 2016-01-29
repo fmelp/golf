@@ -1,12 +1,15 @@
 package com.franmelp.golfgps;
 
 import android.content.Context;
+import android.content.Intent;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -28,6 +31,9 @@ public class HoleVizOne extends AppCompatActivity{
     private Location backGreenLoc;
     private Location fromWhiteLoc;
     private Location fromYelLoc;
+
+    private Button prevButton;
+    private Button nextButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,8 +75,18 @@ public class HoleVizOne extends AppCompatActivity{
         backGreenLoc.setLatitude(40.87181609);
         backGreenLoc.setLongitude(17.40003537);
 
+        prevButton = (Button) findViewById(R.id.onePrev);
+        nextButton = (Button) findViewById(R.id.oneNext);
 
+        prevButton.setEnabled(false);
 
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goToNextHole = new Intent(HoleVizOne.this, HoleVizTwo.class);
+                startActivity(goToNextHole);
+            }
+        });
 
 
         locationListener = new LocationListener() {
