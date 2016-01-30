@@ -21,8 +21,8 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/hole4_rimpicc"
         android:id="@+id/fourHolePic"
+        android:src="@drawable/hole4_rimpicc"
         android:layout_alignParentLeft="true"
         android:layout_toLeftOf="@+id/fourCenterShim"
         />
@@ -74,6 +74,33 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/fourFromWhite"
             android:id="@+id/fourFromYellow"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PREV"
+                android:id="@+id/fourPrev"
+                />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NEXT"
+                android:id="@+id/fourNext"
+                />
+
+
+        </LinearLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Main Menu"
+            android:id="@+id/fourMainMenu"
             />
     </LinearLayout>
 

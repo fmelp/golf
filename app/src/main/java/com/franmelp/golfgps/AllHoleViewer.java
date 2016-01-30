@@ -1,10 +1,13 @@
 package com.franmelp.golfgps;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
@@ -29,6 +32,8 @@ public class AllHoleViewer extends AppCompatActivity {
     private static Button buttonSeventeen;
     private static Button buttonEighteen;
 
+    private static LinearLayout buttonHolder;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +57,20 @@ public class AllHoleViewer extends AppCompatActivity {
         buttonSixteen = (Button) findViewById(R.id.buttonSixteen);
         buttonSeventeen = (Button) findViewById(R.id.buttonSeventeen);
         buttonEighteen = (Button) findViewById(R.id.buttonEigtheen);
+
+        buttonHolder = (LinearLayout) findViewById(R.id.allHoleHolder);
+        Context context = this.getApplicationContext();
+
+        float myTextSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 18F, context.getResources().getDisplayMetrics());
+
+        int color = Integer.parseInt("32cd32", 16)+0xFF000000;
+
+        for (int i = 0; i < buttonHolder.getChildCount(); i++){
+            Button b = (Button) buttonHolder.getChildAt(i);
+            b.setTextSize(TypedValue.COMPLEX_UNIT_SP,myTextSize+10);
+            b.setTextColor(color);
+
+        }
 
         buttonOne.setOnClickListener(new View.OnClickListener() {
             @Override

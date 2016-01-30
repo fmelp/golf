@@ -72,8 +72,9 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".HoleVizEighteen"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".AllHoleViewer"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".AllHoleViewer" />
+        <activity android:name=".LoadHolePic"></activity>
     </application>
 
 </manifest>

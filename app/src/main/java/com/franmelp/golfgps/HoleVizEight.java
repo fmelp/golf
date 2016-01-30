@@ -1,12 +1,18 @@
 package com.franmelp.golfgps;
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Color;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.TypedValue;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class HoleVizEight extends AppCompatActivity{
@@ -31,6 +37,12 @@ public class HoleVizEight extends AppCompatActivity{
     private Location backGreenLoc;
     private Location fromWhiteLoc;
     private Location fromYelLoc;
+
+    private Button prevButton;
+    private Button nextButton;
+    private Button mainMenuButton;
+
+    private LinearLayout textHolder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,7 +93,55 @@ public class HoleVizEight extends AppCompatActivity{
         backGreenLoc.setLatitude(40.87963038);
         backGreenLoc.setLongitude(17.39610285);
 
+        prevButton = (Button) findViewById(R.id.eightPrev);
+        nextButton = (Button) findViewById(R.id.eightNext);
+        mainMenuButton = (Button) findViewById(R.id.eightMainMenu);
 
+
+        prevButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goToNextHole = new Intent(HoleVizEight.this, HoleVizSeven.class);
+                startActivity(goToNextHole);
+            }
+        });
+
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goToNextHole = new Intent(HoleVizEight.this, HoleVizNine.class);
+                startActivity(goToNextHole);
+            }
+        });
+
+        mainMenuButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goToMainMenu = new Intent(HoleVizEight.this, HomeScreenActivity.class);
+                startActivity(goToMainMenu);
+            }
+        });
+
+        textHolder = (LinearLayout) frontGreenText.getParent();
+
+        float myTextSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP,
+                18F, this.getApplicationContext().getResources().getDisplayMetrics());
+
+        int color = Integer.parseInt("32cd32", 16)+0xFF000000;
+
+        for (int i = 0; i < textHolder.getChildCount(); i++){
+            if (textHolder.getChildAt(i) instanceof TextView){
+                TextView t = (TextView) textHolder.getChildAt(i);
+                t.setTextSize(TypedValue.COMPLEX_UNIT_SP, myTextSize);
+            }
+//            Button b = (Button) textHolder.getChildAt(i);
+//            b.setTextSize(TypedValue.COMPLEX_UNIT_SP, myTextSize+10);
+//            b.setTextColor(color);
+        }
+        prevButton.setTextSize(myTextSize);
+        nextButton.setTextSize(myTextSize);
+        fromWhiteText.setTextColor(Color.WHITE);
+        fromYelText.setTextColor(Color.YELLOW);
 
         locationListener = new LocationListener() {
 

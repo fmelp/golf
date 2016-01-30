@@ -29,8 +29,8 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/hole1_rimpicc"
         android:id="@+id/oneHolePic"
+        android:src="@drawable/hole1_rimpicc"
         android:layout_alignParentLeft="true"
         android:layout_toLeftOf="@+id/oneCenterShim"
         />
@@ -135,6 +135,12 @@
 
 
         </LinearLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Main Menu"
+            android:id="@+id/oneMainMenu"
+            />
     </LinearLayout>
 
 

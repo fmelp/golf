@@ -1,13 +1,19 @@
 package com.franmelp.golfgps;
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Color;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.TypedValue;
+import android.view.View;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class HoleVizTwo extends AppCompatActivity{
@@ -38,22 +44,32 @@ public class HoleVizTwo extends AppCompatActivity{
     private Location fromWhiteLoc;
     private Location fromYelLoc;
 
+    private Button prevButton;
+    private Button nextButton;
+    private Button mainMenuButton;
+
+    private LinearLayout textHolder;
+
+//    private ImageView holePic;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hole_viz_two);
+//        holePic = (ImageView) findViewById(R.id.twoHolePic);
+//        loadBitmap(holePic, this.getApplicationContext(), R.drawable.hole2_rimpicc);
 
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
         fromWhiteText = (TextView) findViewById(R.id.twoFromWhite);
-        fromWhiteText.setText("from white: ");
+        fromWhiteText.setText("white: ");
         fromWhiteLoc = new Location("");
         fromWhiteLoc.setLatitude(40.87094799);
         fromWhiteLoc.setLongitude(17.39980940);
 
         fromYelText = (TextView) findViewById(R.id.twoFromYellow);
-        fromYelText.setText("from yellow: ");
+        fromYelText.setText("yellow: ");
         fromYelLoc = new Location("");
         fromYelLoc.setLatitude(40.87115139);
         fromYelLoc.setLongitude(17.39986065);
@@ -100,6 +116,55 @@ public class HoleVizTwo extends AppCompatActivity{
         backGreenLoc.setLatitude(40.87323026);
         backGreenLoc.setLongitude(17.40517705);
 
+        prevButton = (Button) findViewById(R.id.twoPrev);
+        nextButton = (Button) findViewById(R.id.twoNext);
+        mainMenuButton = (Button) findViewById(R.id.twoMainMenu);
+
+        prevButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goToNextHole = new Intent(HoleVizTwo.this, HoleVizOne.class);
+                startActivity(goToNextHole);
+            }
+        });
+
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goToNextHole = new Intent(HoleVizTwo.this, HoleVizThree.class);
+                startActivity(goToNextHole);
+            }
+        });
+
+        mainMenuButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goToMainMenu = new Intent(HoleVizTwo.this, HomeScreenActivity.class);
+                startActivity(goToMainMenu);
+            }
+        });
+
+        textHolder = (LinearLayout) frontGreenText.getParent();
+
+        float myTextSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP,
+                18F, this.getApplicationContext().getResources().getDisplayMetrics());
+
+        int color = Integer.parseInt("32cd32", 16)+0xFF000000;
+
+        for (int i = 0; i < textHolder.getChildCount(); i++){
+            if (textHolder.getChildAt(i) instanceof TextView){
+                TextView t = (TextView) textHolder.getChildAt(i);
+                t.setTextSize(TypedValue.COMPLEX_UNIT_SP, myTextSize);
+            }
+//            Button b = (Button) textHolder.getChildAt(i);
+//            b.setTextSize(TypedValue.COMPLEX_UNIT_SP, myTextSize+10);
+//            b.setTextColor(color);
+        }
+        prevButton.setTextSize(myTextSize);
+        nextButton.setTextSize(myTextSize);
+        fromWhiteText.setTextColor(Color.WHITE);
+        fromYelText.setTextColor(Color.YELLOW);
+
 
 
         locationListener = new LocationListener() {
@@ -127,11 +192,11 @@ public class HoleVizTwo extends AppCompatActivity{
                 //backGreen
                 String distBack = "back: " + calcDistance(backGreenLoc);
                 backGreenText.setText(distBack);
-                //from white tee
-                String distWhite = "from white: " + calcDistance(fromWhiteLoc);
+                //white tee
+                String distWhite = "white: " + calcDistance(fromWhiteLoc);
                 fromWhiteText.setText(distWhite);
-                //from yellow tee
-                String distYel = "from yellow: " + calcDistance(fromYelLoc);
+                //yellow tee
+                String distYel = "yellow: " + calcDistance(fromYelLoc);
                 fromYelText.setText(distYel);
 
             }
@@ -180,5 +245,9 @@ public class HoleVizTwo extends AppCompatActivity{
         return Integer.toString(distanceMeters);
 
     }
+//    private void loadBitmap(ImageView imageView, Context context, int resId){
+//        LoadHolePic loadPicTask = new LoadHolePic(imageView, context);
+//        loadPicTask.execute(resId);
+//    }
 
 }

@@ -1,13 +1,19 @@
 package com.franmelp.golfgps;
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Color;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.TypedValue;
+import android.view.View;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class HoleVizSix extends AppCompatActivity{
@@ -37,6 +43,12 @@ public class HoleVizSix extends AppCompatActivity{
     private Location fromWhiteLoc;
     private Location fromYelLoc;
 
+    private Button prevButton;
+    private Button nextButton;
+    private Button mainMenuButton;
+
+    private LinearLayout textHolder;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -46,13 +58,13 @@ public class HoleVizSix extends AppCompatActivity{
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 
         fromWhiteText = (TextView) findViewById(R.id.sixFromWhite);
-        fromWhiteText.setText("from white: ");
+        fromWhiteText.setText("white: ");
         fromWhiteLoc = new Location("");
         fromWhiteLoc.setLatitude(40.87500524);
         fromWhiteLoc.setLongitude(17.39843293);
 
         fromYelText = (TextView) findViewById(R.id.sixFromYellow);
-        fromYelText.setText("from yellow: ");
+        fromYelText.setText("yellow: ");
         fromYelLoc = new Location("");
         fromYelLoc.setLatitude(40.87526427);
         fromYelLoc.setLongitude(17.39849865);
@@ -99,6 +111,56 @@ public class HoleVizSix extends AppCompatActivity{
         backGreenLoc.setLatitude(40.87901557);
         backGreenLoc.setLongitude(17.39623589);
 
+        prevButton = (Button) findViewById(R.id.sixPrev);
+        nextButton = (Button) findViewById(R.id.sixNext);
+        mainMenuButton = (Button) findViewById(R.id.sixMainMenu);
+
+
+        prevButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goToNextHole = new Intent(HoleVizSix.this, HoleVizFive.class);
+                startActivity(goToNextHole);
+            }
+        });
+
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goToNextHole = new Intent(HoleVizSix.this, HoleVizSeven.class);
+                startActivity(goToNextHole);
+            }
+        });
+
+        mainMenuButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goToMainMenu = new Intent(HoleVizSix.this, HomeScreenActivity.class);
+                startActivity(goToMainMenu);
+            }
+        });
+
+        textHolder = (LinearLayout) frontGreenText.getParent();
+
+        float myTextSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP,
+                18F, this.getApplicationContext().getResources().getDisplayMetrics());
+
+        int color = Integer.parseInt("32cd32", 16)+0xFF000000;
+
+        for (int i = 0; i < textHolder.getChildCount(); i++){
+            if (textHolder.getChildAt(i) instanceof TextView){
+                TextView t = (TextView) textHolder.getChildAt(i);
+                t.setTextSize(TypedValue.COMPLEX_UNIT_SP, myTextSize);
+            }
+//            Button b = (Button) textHolder.getChildAt(i);
+//            b.setTextSize(TypedValue.COMPLEX_UNIT_SP, myTextSize+10);
+//            b.setTextColor(color);
+        }
+        prevButton.setTextSize(myTextSize);
+        nextButton.setTextSize(myTextSize);
+        fromWhiteText.setTextColor(Color.WHITE);
+        fromYelText.setTextColor(Color.YELLOW);
+
 
 
         locationListener = new LocationListener() {
@@ -126,11 +188,11 @@ public class HoleVizSix extends AppCompatActivity{
                 //backGreen
                 String distBack = "back: " + calcDistance(backGreenLoc);
                 backGreenText.setText(distBack);
-                //from white tee
-                String distWhite = "from white: " + calcDistance(fromWhiteLoc);
+                //white tee
+                String distWhite = "white: " + calcDistance(fromWhiteLoc);
                 fromWhiteText.setText(distWhite);
-                //from yellow tee
-                String distYel = "from yellow: " + calcDistance(fromYelLoc);
+                //yellow tee
+                String distYel = "yellow: " + calcDistance(fromYelLoc);
                 fromYelText.setText(distYel);
 
             }
